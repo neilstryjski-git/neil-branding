@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/itin-wizard/:path*",
-      "destination": "https://itin-wizard-9bx8gbskn-neilstryjski-gits-projects.vercel.app/itin-wizard/:path*"
+      "destination": "https://itin-wizard.vercel.app/itin-wizard/:path*"
     }
   ]
 }
