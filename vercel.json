@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/itin-wizard/:path*",
+      "destination": "https://REPLACE_WITH_ITIN_WIZARD_VERCEL_APP_URL/itin-wizard/:path*"
+    }
+  ]
+}
