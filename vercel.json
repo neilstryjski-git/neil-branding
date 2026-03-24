@@ -1,12 +1,3 @@
 {
-  "rewrites": [
-    {
-      "source": "/itin-wizard",
-      "destination": "https://itin-wizard.vercel.app/itin-wizard/"
-    },
-    {
-      "source": "/itin-wizard/:path*",
-      "destination": "https://itin-wizard.vercel.app/itin-wizard/:path*"
-    }
-  ]
+  "rewrites": []
 }
