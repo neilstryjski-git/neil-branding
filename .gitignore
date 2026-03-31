@@ -1,0 +1,5 @@
+*.log
+*:Zone.Identifier
+server-8080.log
+server-1234.log
+server.log

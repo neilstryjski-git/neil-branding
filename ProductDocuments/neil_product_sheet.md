@@ -34,7 +34,26 @@ That's a fundamentally different build cycle. And it only works if the Product t
 
 ---
 
-## Push Left / Push Right [COMMITTED]
+## Push Left / Push Right — Main Page Version [COMMITTED]
+
+AI doesn't wait. Neither does a poorly scoped feature.
+
+Before AI, rigorous discovery was the tradeoff — slow it down to get it right. AI changed that equation. You can push left properly *and* move fast. Then push right with confidence.
+
+**Push left** means the direction is locked before anyone touches a keyboard — sharp briefs, defined constraints, Product Artifacts that serve as both engineering inputs and stakeholder alignment tools.
+
+**Push right** means being close enough to the build to course-correct in real time. Not waiting for a sprint review. Not handing off and hoping. The PM is in the room.
+
+The PM's old boundary was defined by *explaining* the idea. The new boundary is defined by *proving* it.
+
+AI moves fast. The Product discipline is what makes that speed count.
+
+→ *The Approach — how this works in practice*
+
+---
+
+## The Approach — Detail Page [COMMITTED]
+*Lives at /approach. Linked from Push Left / Push Right section on main page.*
 
 AI doesn't wait. Neither does a poorly scoped feature.
 
@@ -42,17 +61,21 @@ The part most teams miss isn't the build — it's what happens on either side of
 
 The discipline is in holding both ends at once.
 
-Before AI, the impulse was always to push left — spend more time in discovery, get the brief right, align stakeholders before a line of code was written. That was the right instinct. Mistakes made in discovery are cheap. Mistakes caught in production are not. The problem was that doing discovery properly was slow. It consumed time and effort that felt hard to justify when the pressure to ship was real.
+Before AI, the impulse was always to push left — spend more time in discovery, get the brief right, align stakeholders before a line of code was written. That was the right instinct. The problem was that doing discovery properly was slow. It consumed time and effort that felt hard to justify when the pressure to ship was real.
 
-AI changed that equation. The efficiency gains in discovery are significant enough that you no longer have to choose. You can do the rigorous work *and* move fast. Push left properly, then push right with confidence. That's not an incremental improvement — it's a different kind of building.
+Now, hands-on "vibe coding" has exposed a massive gap: AI coding agents can ship production-ready code in minutes, yet our AI "Product Brains" still struggle to hold onto a high-fidelity PRD from a brainstorming session. As sessions grow, AI suffers from **Semantic Noise** and **Middle Degradation**—it loses the high-stakes strategic pivots made in the middle of a chat.
 
-**Push left** means doing the discovery work rigorously enough that by the time anyone touches a keyboard, the direction is locked. That means sharp Problem Statements, defined personas, clear constraints. It means producing *the brief that locks direction, the spec that guides the build, and the criteria that define done* — artifacts that aren't just documentation. They're the inputs that AI and engineering actually build from. The same artifacts that keep the build honest also generate the stakeholder presentations, alignment docs, and roadmaps that keep leadership oriented while the team moves fast. One rigorous process. Two audiences served.
+You can't just chat your way to complex software. You have to anchor the AI execution to an immutable "Bedrock" of truth. This means you can do the rigorous work *and* move fast. Push left properly, then push right with confidence.
+
+**Push left** means producing *the brief that locks direction, the spec that guides the build, and the criteria that define done*. These aren't just documentation; they are the structured guardrails that cut through semantic noise so coding agents build exactly what was intended. One rigorous process. Two audiences served.
 
 **Push right** means being close enough to the build to course-correct in real time — not waiting for a sprint review to find out the interpretation was wrong. It means knowing when to use AI to compress the timeline and when to slow down and think. It means the handoff to a development team isn't a leap of faith — it's a working product with real users already in it.
 
 There's a less obvious consequence of building with AI that took me a while to name. Traditional software is deterministic — input X always produces output Y. Acceptance criteria was essentially a checklist. Pass or fail, mechanically. AI systems are probabilistic. The same input can produce meaningfully different outputs. That changes what testing means. You're no longer verifying a correct answer — you're verifying that the intent was understood and the output falls within an acceptable range. That requires a much closer relationship between the person who defined the intent and the person validating the result. The PM doesn't hand off and wait for a test report. The PM is in the room.
 
 AI moves fast. The Product discipline is what makes that speed count.
+
+← *Back to Neil Stryjski*
 
 ---
 
@@ -148,3 +171,12 @@ Project-based fractional PM engagements. Best fit for teams that need to move fa
 | 18 | 1 | The Two Offers | COMMITTED. Full-time offer leads. Fractional is project-based. Both have CTA links TBD. |
 | 19 | 1 | Footer CTA | COMMITTED. "Let's build something." Three links: Book a call, LinkedIn, GitHub. |
 | 20 | 1 | Gym Owner Story — corrected | Neil didn't build the gym software. Six weeks later, after Itinerary Wizard, he realized he could have. Conditional tense is the point. |
+| 21 | 1 | Push Left / Push Right — split | Tight version on main page with link to dedicated /approach page. Full copy lives on detail page. Accordion rejected in favour of dedicated URL — The Approach is a shareable asset in its own right. |
+| 22 | 1 | Detail page name | "The Approach" at /approach |
+| 23 | 1 | Diagram — final concept | Single horizontal timeline. One outer border = Product zone. Teal/purple inside. Dashed before box inside. Outward expansion arrows. Output artifacts below connected by vertical lines. |
+| 24 | 1 | Diagram — output artifacts | Before zone → "slide deck / concept only". After zone → "working product" (no qualifier). "Output" label between the two boxes. |
+| 25 | 1 | Diagram — what it communicates | Old PM boundary = explaining the idea. New PM boundary = proving it. Engineering joins earlier and goes deeper — implied by leftward arrow, not labelled. |
+| 26 | 1 | Copy addition — proving vs explaining | "The PM's old boundary was defined by explaining the idea. The new boundary is defined by proving it." Added to main page Push Left / Push Right section. |
+| 27 | 1 | Diagram — traditional box left boundary | Intentionally approximate. Where Product's boundary sat in traditional delivery varies by org. Addressed in copy as negotiable — decided in Ways of Working conversations. |
+| 28 | 1 | Diagram — COMMITTED [FINAL v18] | Timeline with Discovery/Delivery separator. Traditional Product Work (dashed teal) outputs Product Artifacts upward. Consultation arrow points to Acceptance (dashed purple). AI Product Work spans full width teal/purple, Product Artifacts inside as AI guardrails. Working product output below with dotted "engineering scales" continuation. Idea dot and production arrow sit outside box edges symmetrically. |
+t output below with dotted "engineering scales" continuation. Idea dot and production arrow sit outside box edges symmetrically. |
