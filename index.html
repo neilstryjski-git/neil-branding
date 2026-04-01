@@ -15,7 +15,9 @@
   <meta property="og:description" content="15 years of Product leadership, now designing the 'Bedrock' for AI-augmented building.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://productdelivered.ca">
-  <!-- <meta property="og:image" content="URL_TO_YOUR_IMAGE"> -->
+  <meta property="og:image" content="https://productdelivered.ca/productdeliveredlogo.png">
+
+  <script src="script.js" defer></script>
   
   <style>
     /* ── Index Specific Styles ── */
@@ -357,7 +359,7 @@
         <p><strong>Push right</strong> means being in the room during the build, proving the intent through working software rather than just explaining it in a brief.</p>
       </div>
 
-      <div class="diagram-wrap" style="padding: 0; background: none; border: none; box-shadow: none;">
+      <div class="diagram-wrap" style="padding: 0; background: none; border: none; box-shadow: none; cursor: zoom-in;" onclick="openModal('productTrio.png')">
         <img src="productTrio.png" alt="Product Trio Agentic Framework Diagram" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border);">
       </div>
 
@@ -480,6 +482,29 @@
   <footer id="footer">
     <div class="inner">
       <div class="footer-cta">Let's build something better.</div>
+      <div class="footer-links">
+        <a href="https://calendly.com/neil_stryjski/" class="footer-link" target="_blank" rel="noopener">Book a call</a>
+        <a href="https://www.linkedin.com/in/neilstryjski/" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/neilstryjski-git" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section').forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>
+'s build something better.</div>
       <div class="footer-links">
         <a href="https://calendly.com/neil_stryjski/" class="footer-link" target="_blank" rel="noopener">Book a call</a>
         <a href="https://www.linkedin.com/in/neilstryjski/" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
