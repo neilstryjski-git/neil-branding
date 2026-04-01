@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
   <style>
     .thesis {
       font-size: 1.125rem;
@@ -38,6 +39,12 @@
   </style>
 </head>
 <body>
+  <!-- Modal -->
+  <div id="imageModal" onclick="this.style.display='none'">
+    <span class="modal-close">&times;</span>
+    <img id="modalImg">
+  </div>
+
   <div class="page">
     <a href="index.html" class="back-link">Neil Stryjski</a>
 
@@ -61,11 +68,6 @@
       <p><strong>Push right</strong> means being close enough to the build to course-correct in real time — not waiting for a sprint review to find out the interpretation was wrong. It means knowing when to use AI to compress the timeline and when to slow down and think. It means the handoff to a development team isn't a leap of faith — it's a Working Product with real users already in it.</p>
       <p>There's a less obvious consequence of building with AI that took me a while to name. Traditional software is deterministic — input X always produces output Y. Acceptance criteria was essentially a checklist. Pass or fail, mechanically. AI systems are probabilistic. The same input can produce meaningfully different outputs. That changes what testing means. You're no longer verifying a correct answer — you're verifying that the intent was understood and the output falls within an acceptable range. That requires a much closer relationship between the person who defined the intent and the person validating the result. The PM doesn't hand off and wait for a test report. The PM is in the room.</p>
       <div class="thesis">AI moves fast. The Product discipline is what makes that speed count.</div>
-    </div>
-  </div>
-</body>
-</html>
-t. The Product discipline is what makes that speed count.</div>
     </div>
   </div>
 </body>

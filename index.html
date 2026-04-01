@@ -309,6 +309,12 @@
 </head>
 <body>
 
+  <!-- Modal -->
+  <div id="imageModal" onclick="this.style.display='none'">
+    <span class="modal-close">&times;</span>
+    <img id="modalImg">
+  </div>
+
   <!-- Nav -->
   <nav>
     <div class="nav-inner">
@@ -328,8 +334,8 @@
   <!-- ① Above the Fold -->
   <section id="hero">
     <div class="inner">
-      <h1 class="hero-headline">I've run Product for 15 years.<br>Now I design how AI and Product Work together.</h1>
-      <p class="hero-subhead">Building software and defining the governance that helps Product teams integrate AI into the engineering lifecycle.</p>
+      <h1 class="hero-headline">I've run Product for 15 years.<br>Now I build the first version myself.</h1>
+      <p class="hero-subhead">The gap between ideation and working software is collapsing.</p>
     </div>
   </section>
 
@@ -345,6 +351,20 @@
         <div class="thesis" style="margin: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.5rem 0;">
           My goal is to help organizations expand the Product footprint in both directions, ensuring the transition to technical scaling is built to handle AI-driven velocity.
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Origins / Gym Story -->
+  <section class="section" id="origins" style="background: var(--bg-alt); padding: 4rem 0;">
+    <div class="inner">
+      <h2 class="section-heading">The Epiphany</h2>
+      <div class="story-body">
+        <p>A few months ago my gym owner told me he'd tried and failed to get custom software built for his business. My instinct was immediate: <em>help him define the product and make sure a developer builds it right.</em></p>
+        
+        <p>Six weeks later, I realized I could have built it myself. Not handed it off. Not found a developer. Built it—concept to active users—myself.</p>
+        
+        <p>The developer role didn't disappear. It moved from <strong>entry point</strong> to <strong>scale-up partner</strong> for a product that's already in the hands of real users. That's a fundamentally different build cycle, and it only works if the Product thinking is rigorous enough to drive the build.</p>
       </div>
     </div>
   </section>
@@ -420,7 +440,7 @@
   <!-- ⑤ Work With Me -->
   <section class="section" id="offers">
     <div class="inner">
-      <h2 class="section-heading">Let's Build</h2>
+      <h2 class="section-heading">Build Together</h2>
       <div class="offers-grid">
 
         <div class="offer">
@@ -443,68 +463,6 @@
   <footer id="footer">
     <div class="inner">
       <div class="footer-cta">Let's build something better.</div>
-      <div class="footer-links">
-        <a href="https://calendly.com/neil_stryjski/" class="footer-link" target="_blank" rel="noopener">Book a call</a>
-        <a href="https://www.linkedin.com/in/neilstryjski/" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/neilstryjski-git" class="footer-link" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.section').forEach(s => observer.observe(s));
-  </script>
-</body>
-</html>
-
-
-    document.querySelectorAll('.section').forEach(s => observer.observe(s));
-  </script>
-</body>
-</html>
->Connect on LinkedIn</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑥ Footer -->
-  <footer id="footer">
-    <div class="inner">
-      <div class="footer-cta">Let's build something better.</div>
-      <div class="footer-links">
-        <a href="https://calendly.com/neil_stryjski/" class="footer-link" target="_blank" rel="noopener">Book a call</a>
-        <a href="https://www.linkedin.com/in/neilstryjski/" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/neilstryjski-git" class="footer-link" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.section').forEach(s => observer.observe(s));
-  </script>
-</body>
-</html>
-'s build something better.</div>
       <div class="footer-links">
         <a href="https://calendly.com/neil_stryjski/" class="footer-link" target="_blank" rel="noopener">Book a call</a>
         <a href="https://www.linkedin.com/in/neilstryjski/" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
