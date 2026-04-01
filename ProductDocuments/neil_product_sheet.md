@@ -36,7 +36,7 @@ That's a fundamentally different build cycle. And it only works if the Product t
 
 * **Pushing the Boundary Left:** I move Product thinking deeper into the technical architecture. By engaging with the system design early, I ensure the foundation is built to handle AI-driven velocity without structural debt.  
 * **Pushing the Boundary Right:** I guide the shift from traditional documentation to "Working Proofs." This allows organizations to validate high-stakes ideas in a production-ready environment before committing full resources to scale them.  
-* **Documentation as a Result:** In this model, documentation isn't a prerequisite for starting; it is a high-fidelity result of the build. Better specs and clearer architectural records are generated as a byproduct of a working system.
+* **Documentation as a Result:** In this model, documentation isn't a prerequisite for starting; it is a high-fidelity result of the build. Better specs and clearer architectural records are generated as a byproduct of a working system. **Skills and Instructions will be published as well as documentation.**
 
 **The Strategic Objective** My goal is to help organizations expand the Product footprint in both directions, ensuring the transition to technical scaling is built on a proven foundation rather than a theoretical one. This approach is highly scalable, allowing the depth of the initial build to be calibrated based on the specific segment and complexity of the organization. By the time a project reaches the scale-up phase, engineering is focusing on hardening and growth because the strategic and technical translation tax has already been paid.
 
