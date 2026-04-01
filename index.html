@@ -334,19 +334,15 @@
   <!-- ② Current Focus & Story -->
   <section class="section" id="story">
     <div class="inner">
-      <h2 class="section-heading">Current Focus</h2>
+      <h2 class="section-heading">The Outcome Engine</h2>
       <div class="story-body">
-        <p>A few months ago, a local gym owner told me he'd tried and failed to get custom software built. My "Traditional Product" brain immediately kicked in: <em>I can help you define the product and make sure a developer builds it right.</em></p>
+        <p>Most organizations invest in AI tools expecting immediate productivity leaps, but the gains often stall. The bottleneck is a discovery process that hasn't evolved and a Product function that hasn't yet integrated with this new technical reality.</p>
         
-        <p>Except, I didn't need to wait. I started experimenting—first with <strong>Lovable</strong>, and then moving locally with <strong>Claude Code</strong> to build and deploy.</p>
+        <p>I help organizations bridge this gap by architecting a more rigorous Product-to-Engineering workflow. By pushing the boundary left into the technical architecture and pushing right into "Working Proofs," we eliminate the strategic translation tax and build on a proven foundation rather than a theoretical one.</p>
         
-        <div class="pull-quote">
-          <p>Six weeks later, I realized I could have built the production MVP myself.</p>
+        <div class="thesis" style="margin: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.5rem 0;">
+          My goal is to help organizations expand the Product footprint in both directions, ensuring the transition to technical scaling is built to handle AI-driven velocity.
         </div>
-
-        <p>The developer role hasn't disappeared; they've just moved from the entry point to the scale-up partner for a product that's already working. But this only works if the Product thinking is rigorous enough to drive the build—not just hand it off.</p>
-        
-        <p>My work now centers on <strong>AI Governance</strong>: designing the frameworks that allow Product teams to work effectively with AI. It's about ensuring that the Product discipline remains the anchor as engineering velocity accelerates.</p>
       </div>
     </div>
   </section>
@@ -401,18 +397,18 @@
           <text font-size="11" x="648" y="218" text-anchor="middle" fill="#666663" font-family="Inter,sans-serif">production</text>
           
           <line x1="340" y1="185" x2="340" y2="215" stroke="#333331" stroke-width="2" stroke-linecap="round"/>
-          <text font-size="13" font-weight="600" x="200" y="195" text-anchor="middle" fill="#0D7A57" font-family="Inter,sans-serif">Discovery</text>
+          <text font-size="13" font-weight="600" x="200" y="195" text-anchor="middle" fill="#0D7A57" font-family="Inter,sans-serif">The Mind</text>
           <text font-size="13" font-weight="600" x="475" y="195" text-anchor="middle" fill="#4338CA" font-family="Inter,sans-serif">Delivery</text>
           
           <!-- AI Section -->
           <rect x="80" y="228" width="260" height="110" rx="0" fill="#0D7A57" fill-opacity="0.08"/>
           <rect x="340" y="228" width="278" height="110" rx="0" fill="#4338CA" fill-opacity="0.08"/>
           <rect x="80" y="228" width="538" height="110" rx="6" fill="none" stroke="#333331" stroke-width="1.5"/>
-          <text font-size="10" font-weight="600" x="348" y="248" text-anchor="middle" fill="#111110" font-family="Inter,sans-serif">AI Product Work</text>
+          <text font-size="10" font-weight="600" x="348" y="248" text-anchor="middle" fill="#111110" font-family="Inter,sans-serif">The Handshake</text>
           
           <rect x="258" y="258" width="164" height="44" rx="6" fill="#ffffff" stroke="#888780" stroke-width="1"/>
-          <text font-size="10" font-weight="500" x="340" y="276" text-anchor="middle" fill="#333331" font-family="Inter,sans-serif">Product Artifacts</text>
-          <text font-size="9" x="340" y="291" text-anchor="middle" fill="#666663" font-family="Inter,sans-serif">AI guardrails</text>
+          <text font-size="10" font-weight="500" x="340" y="276" text-anchor="middle" fill="#333331" font-family="Inter,sans-serif">The Bedrock</text>
+          <text font-size="9" x="340" y="291" text-anchor="middle" fill="#666663" font-family="Inter,sans-serif">immutable truth</text>
           
           <line x1="480" y1="338" x2="480" y2="362" stroke="#4338CA" stroke-width="1" marker-end="url(#arrowpurpledown)"/>
           <text font-size="9" x="492" y="354" text-anchor="start" fill="#666663" font-family="Inter,sans-serif">output</text>
@@ -495,6 +491,45 @@
           <div class="offer-headline">Full-Time Leadership</div>
           <p class="offer-body">I'm looking for leadership roles where product vision and the modern build process are both on the table. If you're looking to compress the distance between strategy and working software, let's talk.</p>
           <a href="https://www.linkedin.com/in/neilstryjski/" class="offer-cta" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ Footer -->
+  <footer id="footer">
+    <div class="inner">
+      <div class="footer-cta">Let's build something better.</div>
+      <div class="footer-links">
+        <a href="https://calendly.com/neil_stryjski/" class="footer-link" target="_blank" rel="noopener">Book a call</a>
+        <a href="https://www.linkedin.com/in/neilstryjski/" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/neilstryjski-git" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section').forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>
+
+
+    document.querySelectorAll('.section').forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>
+>Connect on LinkedIn</a>
         </div>
 
       </div>
