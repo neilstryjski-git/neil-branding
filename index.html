@@ -357,68 +357,8 @@
         <p><strong>Push right</strong> means being in the room during the build, proving the intent through working software rather than just explaining it in a brief.</p>
       </div>
 
-      <div class="diagram-wrap">
-        <svg width="100%" viewBox="0 0 680 440" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <marker id="arrowtrack" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-              <path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </marker>
-            <marker id="arrowgray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-              <path d="M2 1L8 5L2 9" fill="none" stroke="#B4B2A9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </marker>
-            <marker id="arrowpurpledown" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-              <path d="M2 1L8 5L2 9" fill="none" stroke="#3C3489" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </marker>
-            <marker id="arrowcontinue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-              <path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </marker>
-          </defs>
-          <!-- Traditional Section -->
-          <rect x="220" y="30" width="164" height="44" rx="6" fill="#fcfcfb" stroke="#B4B2A9" stroke-width="0.75"/>
-          <text font-size="10" font-weight="500" x="302" y="49" text-anchor="middle" fill="#333331" font-family="Inter,sans-serif">Product Artifacts</text>
-          <text font-size="9" x="302" y="63" text-anchor="middle" fill="#666663" font-family="Inter,sans-serif">presented to engineering</text>
-          <line x1="302" y1="108" x2="302" y2="76" stroke="#B4B2A9" stroke-width="0.75" stroke-dasharray="3 3" marker-end="url(#arrowgray)"/>
-          <text font-size="9" x="318" y="94" text-anchor="start" fill="#666663" font-family="Inter,sans-serif">output</text>
-          
-          <rect x="80" y="110" width="222" height="58" rx="6" fill="#0D7A57" fill-opacity="0.05"/>
-          <rect x="80" y="110" width="222" height="58" rx="6" fill="none" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="4 3"/>
-          <text font-size="10" font-weight="500" x="188" y="143" text-anchor="middle" fill="#0D7A57" font-family="Inter,sans-serif">Traditional Product Work</text>
-          
-          <line x1="302" y1="139" x2="524" y2="139" stroke="#B4B2A9" stroke-width="0.75" stroke-dasharray="4 3" marker-end="url(#arrowgray)"/>
-          <text font-size="9" x="414" y="132" text-anchor="middle" fill="#666663" font-family="Inter,sans-serif">consultation</text>
-          
-          <rect x="528" y="110" width="88" height="58" rx="6" fill="#4338CA" fill-opacity="0.05"/>
-          <rect x="528" y="110" width="88" height="58" rx="6" fill="none" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="4 3"/>
-          <text font-size="10" font-weight="500" x="572" y="143" text-anchor="middle" fill="#4338CA" font-family="Inter,sans-serif">Acceptance</text>
-          
-          <line x1="40" y1="200" x2="644" y2="200" stroke="#888780" stroke-width="1.5" opacity="0.4" marker-end="url(#arrowtrack)"/>
-          <circle cx="40" cy="200" r="3" fill="#888780"/>
-          <text font-size="11" x="40" y="218" text-anchor="middle" fill="#666663" font-family="Inter,sans-serif">idea</text>
-          <text font-size="11" x="648" y="218" text-anchor="middle" fill="#666663" font-family="Inter,sans-serif">production</text>
-          
-          <line x1="340" y1="185" x2="340" y2="215" stroke="#333331" stroke-width="2" stroke-linecap="round"/>
-          <text font-size="13" font-weight="600" x="200" y="195" text-anchor="middle" fill="#0D7A57" font-family="Inter,sans-serif">The Mind</text>
-          <text font-size="13" font-weight="600" x="475" y="195" text-anchor="middle" fill="#4338CA" font-family="Inter,sans-serif">Delivery</text>
-          
-          <!-- AI Section -->
-          <rect x="80" y="228" width="260" height="110" rx="0" fill="#0D7A57" fill-opacity="0.08"/>
-          <rect x="340" y="228" width="278" height="110" rx="0" fill="#4338CA" fill-opacity="0.08"/>
-          <rect x="80" y="228" width="538" height="110" rx="6" fill="none" stroke="#333331" stroke-width="1.5"/>
-          <text font-size="10" font-weight="600" x="348" y="248" text-anchor="middle" fill="#111110" font-family="Inter,sans-serif">The Handshake</text>
-          
-          <rect x="258" y="258" width="164" height="44" rx="6" fill="#ffffff" stroke="#888780" stroke-width="1"/>
-          <text font-size="10" font-weight="500" x="340" y="276" text-anchor="middle" fill="#333331" font-family="Inter,sans-serif">The Bedrock</text>
-          <text font-size="9" x="340" y="291" text-anchor="middle" fill="#666663" font-family="Inter,sans-serif">immutable truth</text>
-          
-          <line x1="480" y1="338" x2="480" y2="362" stroke="#4338CA" stroke-width="1" marker-end="url(#arrowpurpledown)"/>
-          <text font-size="9" x="492" y="354" text-anchor="start" fill="#666663" font-family="Inter,sans-serif">output</text>
-          
-          <rect x="380" y="364" width="140" height="40" rx="6" fill="#ffffff" stroke="#4338CA" stroke-width="1"/>
-          <text font-size="10" font-weight="500" x="450" y="388" text-anchor="middle" fill="#4338CA" font-family="Inter,sans-serif">Working Product</text>
-          
-          <line x1="520" y1="384" x2="634" y2="384" stroke="#888780" stroke-width="0.75" stroke-dasharray="4 3" marker-end="url(#arrowcontinue)"/>
-          <text font-size="9" x="574" y="377" text-anchor="middle" fill="#666663" font-family="Inter,sans-serif">engineering scales</text>
-        </svg>
+      <div class="diagram-wrap" style="padding: 0; background: none; border: none; box-shadow: none;">
+        <img src="productTrio.png" alt="Product Trio Agentic Framework Diagram" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border);">
       </div>
 
       <div class="thesis">AI moves fast. The Product discipline is what makes that speed count.</div>
