@@ -11,17 +11,54 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
   <style>
+    /* ── Expand sections ── */
+    .expand {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-top: 1rem;
+      overflow: hidden;
+    }
+    .expand summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.875rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+      transition: color 0.15s, background 0.15s;
+    }
+    .expand summary::-webkit-details-marker { display: none; }
+    .expand summary::before {
+      content: '+';
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+      line-height: 1;
+    }
+    .expand[open] summary::before { content: '−'; }
+    .expand summary:hover { color: var(--text-primary); background: var(--bg-alt); }
+    .expand[open] summary { border-bottom: 1px solid var(--border-muted); color: var(--text-secondary); }
+    .expand-body {
+      padding: 1.5rem 1.25rem;
+    }
+
+    /* ── Persona table ── */
     .persona-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1.25rem 0 0;
       font-size: 0.9375rem;
+      margin-top: 0.75rem;
     }
     .persona-table th {
       text-align: left;
       font-weight: 600;
       color: var(--text-primary);
-      padding: 0.5rem 1rem 0.5rem 0;
+      padding: 0.4rem 1rem 0.4rem 0;
       border-bottom: 1px solid var(--border);
       font-size: 0.8125rem;
       text-transform: uppercase;
@@ -41,25 +78,26 @@
     }
     .persona-table tr:last-child td { border-bottom: none; }
 
+    /* ── Pillar cards ── */
     .pillar {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border-muted);
+      padding: 1rem 0;
     }
+    .pillar:last-child { border-bottom: none; padding-bottom: 0; }
+    .pillar:first-child { padding-top: 0; }
     .pillar-label {
       font-size: 0.6875rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-muted);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.2rem;
     }
     .pillar h4 {
-      font-size: 1rem;
+      font-size: 0.9375rem;
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.35rem;
     }
     .pillar p {
       font-size: 0.9375rem;
@@ -67,53 +105,65 @@
       margin-bottom: 0 !important;
     }
 
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border-muted);
-      margin: 3rem 0;
-    }
-
+    /* ── Install ── */
     .install-block {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border-muted);
+      padding: 1rem 0;
     }
+    .install-block:first-child { padding-top: 0; }
+    .install-block:last-child { border-bottom: none; padding-bottom: 0; }
     .install-block h4 {
-      font-size: 1rem;
+      font-size: 0.9375rem;
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.35rem;
     }
     .install-block p {
       font-size: 0.9375rem;
       color: var(--text-secondary);
-      margin-bottom: 0.75rem !important;
+      margin-bottom: 0.6rem !important;
     }
     .install-block code {
       display: block;
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 0.75rem 1rem;
+      padding: 0.65rem 1rem;
       font-family: 'SF Mono', 'Fira Code', monospace;
       font-size: 0.875rem;
       color: var(--text-primary);
     }
 
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border-muted);
+      margin: 3rem 0;
+    }
+
+    /* ── Callout ── */
     .callout {
       border-left: 2px solid var(--teal);
       padding: 0.25rem 0 0.25rem 1.75rem;
       margin: 2.5rem 0;
     }
     .callout p {
-      font-size: 1.125rem;
+      font-size: 1.0625rem;
       font-weight: 500;
       color: var(--text-primary) !important;
-      line-height: 1.5;
-      letter-spacing: -0.01em;
+      line-height: 1.6;
       margin: 0 !important;
+    }
+
+    /* ── Framework section ── */
+    .framework-section {
+      margin-bottom: 2.5rem;
+    }
+    .framework-section h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -139,155 +189,117 @@
     <div class="body-copy">
       <p style="font-size: 1.25rem; font-weight: 500; color: var(--text-primary); margin-bottom: 2rem;">AI coding agents can ship production-ready code in minutes. The problem isn't speed — it's what happens when nothing anchors that speed to the original intent.</p>
 
-      <p>Long-context AI sessions suffer from <strong>Semantic Noise</strong> and <strong>Middle Degradation</strong>. The high-stakes strategic pivots made in the middle of a brainstorming session quietly disappear. The coding agent builds confidently — just not what you meant.</p>
-
-      <p>This framework solves that. It separates exploration from execution, anchors every build decision to an immutable source of truth, and ensures the handoff from Product thinking to working software carries zero strategic translation tax.</p>
+      <p>Long-context AI sessions suffer from <strong>Semantic Noise</strong> and <strong>Middle Degradation</strong>. Strategic pivots made mid-session disappear quietly. The coding agent builds confidently — just not what you meant. This framework solves that by separating exploration from execution and anchoring every build decision to an immutable source of truth.</p>
 
       <hr class="divider">
 
       <!-- The Brain -->
-      <div style="margin-bottom: 2.5rem;">
-        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">The Brain — Product Trio Agent</h3>
-        <p>Three AI personas simulate a core product team. They debate, challenge, and produce the Bedrock. They never touch code.</p>
-        <table class="persona-table">
-          <thead>
-            <tr>
-              <th>Persona</th>
-              <th>Role</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>AI TPM</td>
-              <td>Strategic Orchestrator. Translates vision into workflow. Authorized to push back on the PM.</td>
-            </tr>
-            <tr>
-              <td>AI Design (UX)</td>
-              <td>Advocates for user friction, adoption risk, and branding logic.</td>
-            </tr>
-            <tr>
-              <td>AI Engineering</td>
-              <td>Advocates for feasibility, architecture, and technical debt.</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="margin-top: 1rem;">The <strong>Senior PM (you)</strong> holds ultimate authority. Every major proposal gets a proactive response from at least two personas — friction points, technical debt, UX risks — without being asked. The Trio is a strategic partner, not a passive recorder.</p>
+      <div class="framework-section">
+        <h3>The Brain — Product Trio Agent</h3>
+        <p>Three AI personas simulate a core product team — TPM, Design, and Engineering. They debate, challenge, and produce the Bedrock. They never touch code. You, the Senior PM, hold ultimate authority.</p>
+        <details class="expand">
+          <summary>Meet the personas</summary>
+          <div class="expand-body">
+            <table class="persona-table">
+              <thead><tr><th>Persona</th><th>Role</th></tr></thead>
+              <tbody>
+                <tr><td>AI TPM</td><td>Strategic Orchestrator. Translates vision into workflow. Authorized to push back on the PM.</td></tr>
+                <tr><td>AI Design (UX)</td><td>Advocates for user friction, adoption risk, and branding logic.</td></tr>
+                <tr><td>AI Engineering</td><td>Advocates for feasibility, architecture, and technical debt.</td></tr>
+              </tbody>
+            </table>
+            <p style="margin-top: 1rem; font-size: 0.9375rem; color: var(--text-secondary);">Every major proposal gets a proactive response from at least two personas — friction points, technical debt, UX risks — without being asked. The Trio is a strategic partner, not a passive recorder.</p>
+          </div>
+        </details>
       </div>
 
       <!-- The Bedrock -->
-      <div style="margin-bottom: 2.5rem;">
-        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">The Bedrock — Four Immutable Pillars</h3>
-        <p>The Bedrock is the source of truth. It is never edited by a coding agent. Every build decision traces back here.</p>
-
-        <div style="margin-top: 1.5rem;">
-          <div class="pillar">
-            <div class="pillar-label">Pillar I</div>
-            <h4>The Charter — The North Star</h4>
-            <p>Mission, Constraints, User Personas, Domain Glossary, Problem Statement. Includes a C1 System Context diagram showing how the system interacts with users and external systems. Mandatory for any new feature.</p>
+      <div class="framework-section">
+        <h3>The Bedrock — Four Immutable Pillars</h3>
+        <p>The Bedrock is the source of truth. It is never edited by a coding agent. Every build decision traces back here. Changes are governed by the <strong>MACD Protocol</strong> — Move, Add, Change, Delete — with a confirmed receipt for every update. The Pillars are either <strong>[COMMITTED]</strong> or <strong>[UNDER AUDIT]</strong>. There is no in-between.</p>
+        <details class="expand">
+          <summary>See the four Pillars</summary>
+          <div class="expand-body">
+            <div class="pillar">
+              <div class="pillar-label">Pillar I</div>
+              <h4>The Charter — The North Star</h4>
+              <p>Mission, Constraints, User Personas, Domain Glossary, Problem Statement. Includes a C1 System Context diagram. Mandatory for any new feature.</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-label">Pillar II</div>
+              <h4>The Specs — The Brain</h4>
+              <p>Unified Strategic PRD, Technical Spec, and UX/Branding Logic. Includes a C2 Container diagram for any structural change. Where resolved decisions land after Sprint 0.</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-label">Pillar III</div>
+              <h4>The Quality Gate — The Validation</h4>
+              <p>BDD Scenarios (Given/When/Then) and the Validation/Testing Plan. The absolute Definition of Done. Focused on high-value differentiators and high-friction paths — not a checklist of obvious things.</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-label">Pillar IV</div>
+              <h4>The Ledger — The Memory</h4>
+              <p>Roadmap, Change History, Sprint 0 Tasks, and Strategic Dissent records. If the PM overrides the Trio, it's logged here — so The Hands understand why a non-standard path was chosen.</p>
+            </div>
           </div>
-          <div class="pillar">
-            <div class="pillar-label">Pillar II</div>
-            <h4>The Specs — The Brain</h4>
-            <p>Unified Strategic PRD, Technical Spec (Architecture/Security), and UX/Branding Logic. Includes a C2 Container diagram for any structural or architectural change. Where resolved decisions land after Sprint 0.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar-label">Pillar III</div>
-            <h4>The Quality Gate — The Validation</h4>
-            <p>BDD Scenarios (Given/When/Then) and the Validation/Testing Plan. The absolute Definition of Done. Focused strictly on high-value differentiators and high-friction paths — not a checklist of obvious things.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar-label">Pillar IV</div>
-            <h4>The Ledger — The Memory</h4>
-            <p>Roadmap, Change History, Sprint 0 Tasks (LLD unknowns for The Hands to resolve), and Strategic Dissent records. If the PM overrides the Trio, it's logged here — so The Hands understand why a non-standard path was chosen.</p>
-          </div>
-        </div>
+        </details>
       </div>
-
-      <!-- MACD -->
-      <div style="margin-bottom: 2.5rem;">
-        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">The MACD Protocol</h3>
-        <p>The Bedrock is protected by strict change control: <strong>Move, Add, Change, Delete</strong>. No casual updates. Every change to a Pillar is an explicit, confirmed action with a receipt — version, date, time, decision, and who led it. The Pillars are either <strong>[COMMITTED]</strong> or <strong>[UNDER AUDIT]</strong>. There is no in-between.</p>
-      </div>
-
-      <!-- Mind vs Bedrock -->
-      <div style="margin-bottom: 2.5rem;">
-        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">The Mind vs. The Bedrock</h3>
-        <p><strong>The Mind (The Chat)</strong> is a fluid, high-entropy environment for discovery, debate, and rapid pivoting. Logic here is "Quicksand" — experimental and non-binding.</p>
-        <p><strong>The Bedrock (The Files)</strong> is the immutable, high-density Source of Truth. No logic is considered real or ready for The Hands until it is written into these committed files.</p>
-        <p>The separation is the mechanism. Without it, AI sessions collapse into one long context window where early decisions and late pivots become indistinguishable.</p>
-      </div>
-
-      <hr class="divider">
 
       <!-- The Hands -->
-      <div style="margin-bottom: 2.5rem;">
-        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">The Hands — Implementation Agent</h3>
-        <p>Three implementation personas execute the HLD. They read the Pillars, run Sprint 0, surface gaps the Brain couldn't anticipate, and escalate formally when the blueprint requires it.</p>
-        <table class="persona-table">
-          <thead>
-            <tr>
-              <th>Persona</th>
-              <th>Role</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>TPM</td>
-              <td>Delivery Lead. Keeps implementation true to the Pillars. Flags Charter-level drift.</td>
-            </tr>
-            <tr>
-              <td>Tech Lead</td>
-              <td>Owns LLD decisions — library selection, file structure, component logic. Leads implementation.</td>
-            </tr>
-            <tr>
-              <td>QA Engineer</td>
-              <td>Owns validation against Pillar III BDD scenarios and any additional implementation tests.</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="framework-section">
+        <h3>The Hands — Implementation Agent</h3>
+        <p>Three implementation personas read the Pillars, run a mandatory Sprint 0 to resolve every unknown before a line of code is written, and escalate formally — via a Pillar V Amendment — if the blueprint ever needs to change. Nothing deviates silently.</p>
+        <details class="expand">
+          <summary>How The Hands work</summary>
+          <div class="expand-body">
+            <table class="persona-table">
+              <thead><tr><th>Persona</th><th>Role</th></tr></thead>
+              <tbody>
+                <tr><td>TPM</td><td>Delivery Lead. Keeps implementation true to the Pillars. Flags Charter-level drift.</td></tr>
+                <tr><td>Tech Lead</td><td>Owns LLD decisions — library selection, file structure, component logic. Leads implementation.</td></tr>
+                <tr><td>QA Engineer</td><td>Owns validation against Pillar III BDD scenarios and any additional implementation tests.</td></tr>
+              </tbody>
+            </table>
+            <p style="margin-top: 1rem; font-size: 0.9375rem; color: var(--text-secondary);"><strong>Sprint 0</strong> is a Three Amigos session — all three personas plus the Senior PM — that runs automatically after the Pillars are read. Every LLD unknown is resolved or formally escalated. The PM signs off before implementation begins.</p>
+            <p style="margin-top: 0.75rem; font-size: 0.9375rem; color: var(--text-secondary);">If The Hands hit a blocker or find a better path mid-build, they trigger a <strong>Pillar V Amendment</strong> — documenting the change, the reason, and the impact — and submit it to the Trio for review before pivoting.</p>
+          </div>
+        </details>
       </div>
-
-      <!-- Sprint 0 -->
-      <div style="margin-bottom: 2.5rem;">
-        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Sprint 0 — Before a Single Line of Code</h3>
-        <p>Sprint 0 is mandatory. It is a Three Amigos session — all three personas plus the Senior PM — that runs automatically after the Pillars are read. Every LLD unknown is resolved or formally escalated. Nothing is silently skipped. The PM signs off before implementation begins.</p>
-        <p>If The Hands hit a blocker or find a better path, they don't silently pivot — they trigger a <strong>Pillar V Amendment</strong>, a standalone file documenting the change and the reason, submitted for Trio review. Nothing is lost. Nothing deviates without a record.</p>
-      </div>
-
-      <hr class="divider">
 
       <!-- Install -->
-      <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1.25rem;">Install It</h3>
-
-      <div class="install-block">
-        <h4>The Brain — Claude.ai or Gemini Chat</h4>
-        <p>Open <code style="display:inline; background:none; border:none; padding:0; font-size:inherit;">product-trio-brain/system-prompt.md</code> from the repo and paste the contents as a system prompt or into a Claude Project. Provide your initial product context — the Trio activates and prepares to build the Bedrock.</p>
-      </div>
-
-      <div class="install-block">
-        <h4>The Hands — Claude Code</h4>
-        <p>Clone the repo and run:</p>
-        <code>cp -r the-hands-agent ~/.claude/skills/</code>
-      </div>
-
-      <div class="install-block">
-        <h4>The Hands — Gemini CLI</h4>
-        <p>Copy the contents of <code style="display:inline; background:none; border:none; padding:0; font-size:inherit;">the-hands-agent/SKILL.md</code> into your <code style="display:inline; background:none; border:none; padding:0; font-size:inherit;">GEMINI.md</code> at the project root.</p>
+      <div class="framework-section">
+        <h3>Install It</h3>
+        <p>The Brain works in Claude.ai or Gemini Chat. The Hands run as a skill inside Claude Code or Gemini CLI. Both are in the repo.</p>
+        <details class="expand">
+          <summary>Installation steps</summary>
+          <div class="expand-body">
+            <div class="install-block">
+              <h4>The Brain — Claude.ai or Gemini Chat</h4>
+              <p>Open <code style="display:inline; background:none; border:none; padding:0; font-size:inherit;">product-trio-brain/system-prompt.md</code> and paste the contents as a system prompt or into a Claude Project. Seed it with your product context — the Trio activates and begins building the Bedrock.</p>
+            </div>
+            <div class="install-block">
+              <h4>The Hands — Claude Code</h4>
+              <p>Clone the repo and run:</p>
+              <code>cp -r the-hands-agent ~/.claude/skills/</code>
+            </div>
+            <div class="install-block">
+              <h4>The Hands — Gemini CLI</h4>
+              <p>Copy the contents of <code style="display:inline; background:none; border:none; padding:0; font-size:inherit;">the-hands-agent/SKILL.md</code> into your <code style="display:inline; background:none; border:none; padding:0; font-size:inherit;">GEMINI.md</code> at the project root.</p>
+            </div>
+          </div>
+        </details>
       </div>
 
       <hr class="divider">
 
-      <!-- Personal note -->
       <div class="callout">
-        <p>I'm genuinely excited for people to try this. If you're building with AI and the drift problem resonates — try it, break it, tell me what you find. I'm always happy to collaborate, whether that's a quick question or a deeper conversation about how to adapt it to your stack.</p>
+        <p>I'm genuinely excited for people to try this. If the drift problem resonates — try it, break it, tell me what you find. I'm always happy to collaborate, whether that's a quick question or a deeper conversation about how to adapt it to your stack.</p>
       </div>
 
     </div>
 
-    <div class="card-actions" style="margin-top: 2.5rem; gap: 2rem;">
+    <div class="card-actions" style="margin-top: 2.5rem;">
       <a href="https://github.com/neilstryjski-git/product-trio" class="card-view" target="_blank" rel="noopener">View on GitHub</a>
-      <a href="https://calendly.com/neil_stryjski/" class="card-cta" target="_blank" rel="noopener">Book a call</a>
-      <a href="https://www.linkedin.com/in/neilstryjski/" class="card-cta" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      <a href="https://calendly.com/neil_stryjski/" class="card-cta" target="_blank" rel="noopener">Let's talk</a>
     </div>
   </div>
 </body>
